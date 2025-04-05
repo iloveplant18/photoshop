@@ -34,7 +34,7 @@ jobs:
         with:
           version: 10
       - name: Install dependencies
-        run: pnpm i
+        run: pnpm install
       - name: Build
         run: pnpm build
       - name: Setup Pages

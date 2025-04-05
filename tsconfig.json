@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    // required bullshit
+    "baseUrl": "./",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "target": "es2022",
+    "typeRoots": ["./src/types", "./node_modules/@types"],
+    "esModuleInterop": true,
+
+    // bundling
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "noEmit": true,
+    "strict": true,
+
+    // linting
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitReturns": true,
+    "paths": {
+      "@/*": ["src/*"],
+    }
+  }
+}

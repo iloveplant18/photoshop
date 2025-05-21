@@ -4,9 +4,9 @@ import { useState } from "react";
 import Modal from "@/components/Modal";
 
 function Brightness() {
-  const { applyBrightness } = useBrightness();
   const [brightnessLevel, setBrightnessLevel] = useState(0);
   const [isModalShown, setIsModalShown] = useState(false);
+  const { applyBrightness } = useBrightness(brightnessLevel);
 
   return (
     <>
@@ -68,7 +68,7 @@ function Brightness() {
             className="btn btn-sm btn-ghost rounded-xl"
             onClick={() => {
               setIsModalShown(false);
-              applyBrightness(brightnessLevel);
+              applyBrightness();
             }}
           >
             ОК

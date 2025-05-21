@@ -1,6 +1,6 @@
 import useImageStorage from "@/storages/ImageStorage";
 import useProgressStore from "@/storages/ProgressStorage";
-import { chunkSize } from "@/utils/consts";
+import { defaultChunkSize } from "@/utils/consts";
 
 function useContrast() {
   const currentHistoryIndex = useImageStorage(
@@ -21,7 +21,7 @@ function useContrast() {
     const factor = (259 * (contrastLevel + 255)) / (255 * (259 - contrastLevel));
 
     function handleDataChunk() {
-      const end = Math.min(data.length, i + chunkSize);
+      const end = Math.min(data.length, i + defaultChunkSize);
       for (; i < end; i += 4) {
         data[i] = Math.min(255, Math.max(0, factor * (data[i]! - 128) + 128));
         data[i + 1] = Math.min(255, Math.max(0, factor * (data[i + 1]! - 128) + 128));

@@ -31,3 +31,9 @@ export const enum ColorType {
 }
 
 export type Statistics = number[];
+
+export type HandleData = (
+  index: number,
+  data: Uint8ClampedArray,
+  originalData: Uint8ClampedArray,
+) => void;

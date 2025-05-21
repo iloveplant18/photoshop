@@ -1,1 +1,1 @@
-export const chunkSize = 3500000;
+export const defaultChunkSize = 3500000;

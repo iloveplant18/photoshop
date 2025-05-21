@@ -1,7 +1,7 @@
 import useImageStorage from "@/storages/ImageStorage";
 import calcBrightness from "@/utils/calcBrightness";
 import { useEffect, useState } from "react";
-import { chunkSize } from "@/utils/consts";
+import { defaultChunkSize } from "@/utils/consts";
 
 function useColorStatistic() {
   const history = useImageStorage((state) => state.history);
@@ -18,7 +18,7 @@ function useColorStatistic() {
       return;
     }
     let isProcessing = true;
-    let customChunkSize = chunkSize / 3;
+    let customChunkSize = defaultChunkSize / 3;
     const pixels = history[currentHistoryIndex] as Uint8ClampedArray;
     const newStatistic = createEmptyStatistic();
     let i = 0;

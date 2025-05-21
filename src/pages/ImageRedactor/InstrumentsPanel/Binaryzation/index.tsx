@@ -8,7 +8,6 @@ import "@rc-component/color-picker/assets/index.css";
 import { Color } from "@rc-component/color-picker/lib/color";
 
 function Binarization() {
-  const { applyBinarization } = useBinarization();
   const [brightnessLevel, setBrightnessLevel] = useState(127);
   const [firstColor, setFirstColor] = useState<RGBColor>({
     type: ColorType.RGB,
@@ -19,6 +18,7 @@ function Binarization() {
     value: { red: 0, green: 0, blue: 0 },
   });
   const [isModalShown, setIsModalShown] = useState(false);
+  const { applyBinarization } = useBinarization(brightnessLevel, firstColor, secondColor);
 
   function handleColorChange(
     color: Color,
@@ -64,7 +64,7 @@ function Binarization() {
             className="btn btn-sm btn-ghost rounded-xl"
             onClick={() => {
               setIsModalShown(false);
-              applyBinarization?.(brightnessLevel, firstColor, secondColor);
+              applyBinarization();
             }}
           >
             ОК

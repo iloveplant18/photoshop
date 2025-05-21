@@ -5,7 +5,7 @@ import path from "path";
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: "/photoshop/"
+  base: "/photoshop/",
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),
